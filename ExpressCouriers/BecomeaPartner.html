@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	</head>
 	<body class="is-preload">
 		<!-- Header -->
@@ -43,9 +45,9 @@
 			<section id="partners-carousel" class="wrapper style2 fade-up">
 				<div class="inner">
 					<h2>Our Partner Businesses</h2>
-					<div class="carousel-container">
-						<div class="carousel-track">
-							<div class="carousel-slide">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
 								<img src="images/CovaLogo.png" alt="Cova POS">
 							</div>
 							<div class="carousel-slide">
@@ -83,6 +85,30 @@
 					</ul>
 				</div>
 			</footer>
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					new Swiper('.swiper-container', {
+						effect: 'coverflow',
+						grabCursor: true,
+						centeredSlides: true,
+						slidesPerView: 'auto',
+						coverflowEffect: {
+							rotate: 50,
+							stretch: 0,
+							depth: 100,
+							modifier: 1,
+							slideShadows: true,
+						},
+						pagination: {
+							el: '.swiper-pagination',
+						},
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+					});
+				});
+			</script>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
